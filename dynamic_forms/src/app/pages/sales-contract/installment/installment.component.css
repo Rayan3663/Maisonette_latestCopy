@@ -1,0 +1,298 @@
+.form-container {
+  padding: 1rem 1px 1rem 1px;
+  /* height: 90vh; */
+  width: 75vw;
+  background-color: #f4f2ec;
+}
+
+.userInputs {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 4px;
+  margin-top: 5px;
+  height: 25px;
+  font-size: 9px;
+  color: rgb(133, 133, 133);
+  height: 1rem;
+  width: 5rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: inherit;
+}
+
+kendo-label.inputLabel {
+  font-weight: bold;
+  font-size: 0.7rem !important;
+  margin-right: 0.5rem;
+  padding-top: 4px;
+
+}
+
+
+.InputContainer {
+  width: 10.1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  /* margin-right: -19px;    */
+}
+
+kendo-textbox .userInputs::placeholder {
+  font-size: 10px;
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+.ParentInputContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.InputContainer:has(.MidInitialLabel) {
+  width: 12rem;
+}
+
+.InitialLabel {
+  width: 5rem;
+  display: flex;
+  justify-content: end;
+}
+
+.MidInitialLabel {
+  width: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  /* border: 2px solid red; */
+}
+
+.FinalLabel {
+  width: 4.1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.exclamation_icon {
+  color: rgb(112, 112, 112);
+  font-size: 0.7rem;
+}
+
+.Mathematic_Seperator {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4699cd;
+  /* width: 1px; */
+}
+
+.percentage_section {
+  width: 4rem;
+}
+
+.percentage_section kendo-textbox.userInputs {
+  width: 2.5rem;
+  border-radius: 0%;
+}
+
+.upperSection {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Upper left section css */
+.upperLeftSection {
+  width: 52vw;
+}
+
+
+
+.menu-btns {
+  margin-top: 5px;
+  font-size: 12px;
+  background-color: #e1e1e1;
+  width: 18rem;
+  height: 2.5rem;
+  font-weight: 600;
+}
+
+.customUserInputMenu {
+  width: 1.5rem;
+  padding-left: 4px;
+}
+
+.inner_menu_btn {
+  height: 2.5rem;
+  font-size: 10px;
+}
+
+.inner_menu_dropdown {
+  width: 4rem;
+  height: 2.5rem;
+  font-size: 10px;
+
+}
+
+.menu_icon_btn_custom {
+  width: 2rem;
+
+}
+
+.menu_icon {
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding-right: 0.2rem;
+}
+
+/*css for random circle icons*/
+.circleIconCont {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem 0 2rem;
+  margin-top: 0.5rem;
+}
+
+.circleIcon {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.ParentInputContainer2 {
+  padding-right: 2rem;
+}
+
+.radioLabel {
+  width: 3.5rem;
+}
+
+.radiocontainer {
+  display: flex;
+  flex-direction: row;
+  font-size: 5px;
+  /* border: 1px solid red; */
+  width: 15rem;
+}
+
+.innerradiocontainer {
+  display: flex;
+  flex-direction: row;
+  margin-right: 0.5rem;
+}
+
+.InputContainer:has(.radiocontainer) {
+  display: flex;
+  flex-direction: row;
+  width: 19rem;
+
+}
+
+.radioInput {
+  margin-top: 4px;
+}
+
+.Innerradiolabel {
+  font-weight: 500;
+  font-size: 10px;
+  margin-right: 0.1rem;
+  padding-top: 4px;
+}
+
+.k-grid .k-grid-header .k-header {
+  border-bottom: none;
+  background: linear-gradient(#8597ae, #4c5c72);
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+
+/* .cellCustomClass{
+    color: rgb(54, 54, 54);
+    font-size: 12px;
+    
+} */
+
+
+/*For tab view*/
+
+.tab {
+  overflow: hidden;
+  width: 12.1rem;
+  background-color: white;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.tabcontent[hidden] {
+  display: block;
+}
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+.tablinks {
+  width: 6rem;
+  height: 2.5rem;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* final grid buttons */
+
+.tab_btn {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: white;
+}
+
+
+
+/* for radio buttons */
+.k-radio:checked,
+.k-radio.k-checked {
+  border-color: var(--kendo-color-primary, #69aefd) !important;
+  color: var(--kendo-color-on-primary, #ffffff) !important;
+  background-color: var(--kendo-color-primary, #0088ff) !important;
+
+}
+
+
+
+
+.legend-text {
+  font-style: 10px;
+  font-weight: 700;
+  color: #476c9e;
+}
+
+
+/* section 2 */
+
+.section2-fieldset {
+  margin-top: 1rem;
+  /* height: 12rem; */
+}

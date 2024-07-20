@@ -1,0 +1,36 @@
+<div>
+  <div class="main">Sales Contract
+    <kendo-button icon="save" (click)="saveData()">Save</kendo-button>
+  </div>
+  <div class="action" [formGroup]="actionForm" >
+    <label class="action-1">Actions:</label>
+    <kendo-dropdownlist class="drop"  id="actionDropdown" (valueChange)="GetDropDownSelectedValue($event)" [defaultItem]="defaultItem"  formControlName="actionDropdown" [data]="bankList"></kendo-dropdownlist>
+  <ul class="nav nav-tabs">
+  <li class="nav-item">
+      <a class="nav-link" (click)="showSearchComponent()">Search</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="showContractComponent()">Contract</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="showInstallmentComponent()">Installment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="showHistory()">History</a>
+    </li>
+  </ul>
+  </div>
+  <router-outlet></router-outlet>
+ <!-- <div *ngIf="displaySearchComponent">
+  <app-search (triggerEvent)="searchEventTriggered($event)"></app-search>
+</div>
+<div *ngIf="displayContractComponent">
+  <app-contract></app-contract>
+</div>
+<div *ngIf="displayInstallmentComponent">
+  <app-installment></app-installment>
+</div>
+<div *ngIf="displayHistory">
+  <app-history></app-history>
+</div> -->
+</div>

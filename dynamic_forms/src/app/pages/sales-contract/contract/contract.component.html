@@ -1,0 +1,352 @@
+<app-sales-main></app-sales-main>
+<form [formGroup]="contractDetailsForm" class="main">
+  <fieldset formGroupName="general" class="border field1">
+    <legend class=" float-none w-auto px-3 fs-6 legend-text">General</legend>
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="number">Number:</label>
+          </div>
+          <input kendoTextBox id="number" formControlName="number" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="status">Status:</label>
+          </div>
+          <input kendoTextBox id="status" formControlName="status" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="documentStatus">Document Status:</label>
+          </div>
+          <input kendoTextBox id="documentStatus" formControlName="documentStatus" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="overseas">Overseas:</label>
+          </div>
+          <input type="checkbox" id="overseas" formControlName="overseas" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="legal">Legal:</label>
+          </div>
+          <input type="checkbox" id="legal" formControlName="legal" />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="contNo">Related Cont No:</label>
+          </div>
+          <input kendoTextBox id="contNo" formControlName="contNo" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="purpose">Purpose:</label>
+          </div>
+          <input kendoTextBox id="purpose" formControlName="purpose" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="interest">Late Accumulated Interest:</label>
+          </div>
+          <input kendoTextBox id="interest" formControlName="interest" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="discount">Early Accumulated Discount:</label>
+          </div>
+          <input kendoTextBox id="discount" formControlName="discount" />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+ 
+  <fieldset formGroupName="dates" class=" border field1">
+    <legend class=" float-none w-auto px-3 fs-6 legend-text">Dates</legend>
+    <div class="col-md-12">
+      <div class="col-md-6">
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="issueDate">Issue Date:</label>
+          </div>
+          <input kendoTextBox id="issueDate" formControlName="issueDate" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="deliveryDate">Delivery Date:</label>
+          </div>
+          <input kendoTextBox id="deliveryDate" formControlName="deliveryDate" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="revisedDeliveryDate">Revised Delivery Date:</label>
+          </div>
+          <input kendoTextBox id="revisedDeliveryDate" formControlName="revisedDeliveryDate" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="commissionDate">Commission Date:</label>
+          </div>
+          <input kendoTextBox id="commissionDate" formControlName="commissionDate" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="startDate">Start Date:</label>
+          </div>
+          <input kendoTextBox id="startDate" formControlName="startDate" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="gracePeriod">Grace Period:</label>
+          </div>
+          <input kendoTextBox id="gracePeriod" formControlName="gracePeriod" />
+        </div>
+        <div class="k-form-field">
+          <div class="doc">
+            <label for="delayInterest">Delay Interest:</label>
+          </div>
+          <input kendoTextBox id="delayInterest" formControlName="delayInterest" />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+ 
+  <!-- Unit Section -->
+  <fieldset formGroupName="unit" class=" border unit">
+    <legend class=" float-none w-auto px-3 fs-6 legend-text">Unit</legend>
+    <div class="col-md-12">
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="unitNo">Unit No:</label>
+        </div>
+        <input kendoTextBox id="unitNo" formControlName="unitNo" />
+      </div>
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="unitMarkNo">Unit Mark No:</label>
+        </div>
+        <input kendoTextBox id="unitMarkNo" formControlName="unitMarkNo" />
+      </div>
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="bookingNo">Booking No:</label>
+        </div>
+        <input kendoTextBox id="bookingNo" formControlName="bookingNo" />
+      </div>
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="bookingFees">Booking Fees:</label>
+        </div>
+        <input kendoTextBox id="bookingFees" formControlName="bookingFees" />
+      </div>
+    </div>
+  </fieldset>
+ 
+  <!-- Mortgage Section -->
+  <fieldset formGroupName="mortgage" class=" border unit">
+    <legend class=" float-none w-auto px-3 fs-6 legend-text">Mortgage Bank</legend>
+    <div class="col-md-12">
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="underMortgage">Under Mortgage:</label>
+        </div>
+        <input type="checkbox" id="underMortgage" formControlName="underMortgage" />
+      </div>
+      <div class="k-form-field">
+        <div class="doc">
+          <label for="mortgageBank">Mortgage Bank</label>
+        </div>
+        <!-- <kendo-dropdownlist id="mortgageBank" formControlName="mortgageBank" [data]="mortgageBankList"></kendo-dropdownlist> -->
+      </div>
+    </div>
+  </fieldset>
+ 
+  <!-- Channel Section -->
+  <fieldset formGroupName="channel" class="border unit">
+    <legend class=" float-none w-auto px-3 fs-6 legend-text">Channel And Source</legend>
+    <div class="k-form-field">
+      <div class="doc">
+        <label for="factor">Factor:</label>
+      </div>
+      <input kendoTextBox id="factor" formControlName="factor" />
+    </div>
+    <div class="k-form-field">
+      <div class="doc">
+        <label for="source">Source:</label>
+      </div>
+      <input kendoTextBox id="source" formControlName="source" />
+    </div>
+  </fieldset>
+ 
+  <fieldset class=" border field1">
+    <legend class="float-none w-auto px-3 fs-6 legend-text section-title">Utilities</legend>
+    <div>
+      <kendo-grid [kendoGridBinding]="utilitiesDataToDisplay" [scrollable]="'scrollable'" style="height: 100px;">
+        <kendo-grid-column field="number" title="Number"></kendo-grid-column>
+        <kendo-grid-column field="utilityType" title="Utility Type (En)"></kendo-grid-column>
+        <kendo-grid-column field="calc" title="Calc"></kendo-grid-column>
+        <kendo-grid-column field="price" title="Price"></kendo-grid-column>
+        <kendo-grid-column field="start" title="Start"></kendo-grid-column>
+        <kendo-grid-column field="end" title="End"></kendo-grid-column>
+        <kendo-grid-column field="termsPlan" title="Terms/Plan"></kendo-grid-column>
+        <kendo-grid-column field="contractType" title="Contract Type"></kendo-grid-column>
+        <ng-template kendoGridNoRecordsTemplate>
+          No Records Found!
+        </ng-template>
+      </kendo-grid>
+    </div>
+  </fieldset>
+ 
+  <!-- Sales Agent and Brokers Section -->
+  <fieldset class=" border field1">
+    <legend class="float-none w-auto px-3 fs-6 legend-text section-title ">Sales Agent and Brokers</legend>
+    <div class="col-md-12">
+      <legend class="float-none w-auto px-3 fs-6 legend-text section-title ">Sales Agent</legend>
+      <div>
+        <kendo-grid [kendoGridBinding]="salesAgentsData" [scrollable]="'scrollable'" style="height: 5rem;">
+          <kendo-grid-column field="agentId" title="Agent ID"></kendo-grid-column>
+          <kendo-grid-column field="agentName" title="Agent Name"></kendo-grid-column>
+          <kendo-grid-column field="contact" title="Contact"></kendo-grid-column>
+          <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+          <kendo-grid-column field="region" title="Region"></kendo-grid-column>
+          <ng-template kendoGridNoRecordsTemplate>
+            No Records Found!
+          </ng-template>
+        </kendo-grid>
+      </div>
+    </div>
+  </fieldset>
+ 
+ 
+  <!-- Misc Section -->
+  <fieldset formGroupName="misc" class="border unit">
+    <legend class="float-none w-auto px-3 fs-6 legend-text">Misc</legend>
+    <div class="k-form-field col-md-6">
+      <div class="doc">
+        <label for="remarksE">Remarks(e):</label>
+      </div>
+      <textarea kendoTextArea id="remarksE" formControlName="remarksE"></textarea>
+    </div>
+    <div class="k-form-field col-md-6">
+      <div class="doc">
+        <label for="remarksA">Remarks(a):</label>
+      </div>
+      <textarea kendoTextArea id="remarksA" formControlName="remarksA"></textarea>
+    </div>
+  </fieldset>
+ 
+  <!-- Finance Section -->
+ 
+  <fieldset formGroupName="finance" class="border finance-container">
+    <legend class="float-none w-auto px-3 fs-6 legend-text">Finance</legend>
+    <div class="finance-tab-section">
+      <div class="finance-input-list">
+        <div class="k-form-field">
+          <label for="askingPrice">Asking Price:</label>
+          <input kendoTextBox id="askingPrice" formControlName="askingPrice" />
+        </div>
+      </div>
+      <div class="finance-input-list">
+        <div class="form-group finance-input-box">
+          <label for="egp">EGP:</label>
+          <kendo-combobox class="form-control" formControlName="egp">
+ 
+          </kendo-combobox>
+        </div>
+      </div>
+      <div class="finance-input-list">
+        <div class="k-form">
+          <label for="options">+Options:</label>
+          <input kendoTextBox id="options" formControlName="options" class="form-control" />
+        </div>
+      </div>
+      <div class="finance-input-list">
+        <div class="k-form">
+          <label for="modifications">+Modifications:</label>
+          <input kendoTextBox id="modifications" formControlName="modifications" class="form-control" />
+        </div>
+      </div>
+ 
+      <div class="finance-input-list">
+        <div class="form-group finance-input-box">
+          <label for="comm">Comm.Dis:</label>
+          <kendo-combobox class="form-control" placeholder="Lumps" formControlName="comm">
+ 
+          </kendo-combobox>
+          <div class="finance-input-items">
+            <div>
+              <input kendoTextBox id="com1" formControlName="com1" class="form-control" />
+            </div>
+            <div>
+              <input kendoTextBox id="com2" formControlName="com2" class="form-control" />
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+    </div>
+    <div class="finance-tab-bottom">
+      <div class="finance-input-list">
+        <div class="k-form-field">
+          <label for="Finance">Minimum Asking price:</label>
+          <input kendoTextBox id="minAskPrice" formControlName="minAskPrice" class="form-control" />
+        </div>
+      </div>
+      <div class="finance-tab-bottom-right">
+        <div class="finance-tab-bottom-item">
+          <div class="finance-input-list">
+            <div class="k-form">
+              <label for="extraFees">+ Extra Fees:</label>
+              <input kendoTextBox id="extraFees" formControlName="extraFees" class="form-control" />
+            </div>
+          </div>
+          <div class="finance-input-list">
+            <div class="k-form">
+              <label for="initialPrice">= Initial Prices:</label>
+              <input kendoTextBox id="initialPrice" formControlName="initialPrice" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="finance-tab-bottom-item">
+          <div class="finance-input-list finance-dis-container">
+            <div class="k-form-field">
+              <label for="dis">- Dis(+)/Int(-):</label>
+              <input kendoTextBox id="dis" formControlName="dis" class="form-control" /><span>%</span>
+            </div>
+            <!-- <div class="finance-dis-percent">
+              <input kendoTextBox id="per" formControlName="per" class="form-control" /><span>%</span>
+            </div> -->
+          </div>
+ 
+          <div class="finance-input-list">
+            <div class="k-form">
+              <label for="net">= Net:</label>
+              <input kendoTextBox id="net" formControlName="net" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="finance-tab-bottom-item">
+          <div class="finance-input-list">
+            <div class="k-form">
+              <label for="util">+ Utilities:</label>
+              <input kendoTextBox id="util" formControlName="util" class="form-control" />
+            </div>
+          </div>
+          <div class="finance-input-list">
+            <div class="k-form">
+              <label for="gross">= Gross:</label>
+              <input kendoTextBox id="gross" formControlName="gross" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+   
+  </fieldset>
+</form>

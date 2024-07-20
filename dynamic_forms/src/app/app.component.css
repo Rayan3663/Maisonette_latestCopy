@@ -1,0 +1,124 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.parent-container {
+    display: flex;
+    align-items: center;
+}
+
+.left-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-img {
+    width: 38rem;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* right side */
+
+.right-container {
+    padding-left: 4rem;
+}
+
+.right-img {
+    width: 8rem;
+    height: 6rem;
+}
+
+.right-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Welcome container */
+
+.WelcomeDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.welcome-back {
+    font-size: 25px;
+}
+
+.instruction {
+    font-size: 12px;
+}
+
+/* input form control */
+
+input::placeholder {
+    font-size: 11px;
+    padding-left: 0.5rem;
+}
+
+.form-field {
+    width: 20rem;
+    height: 2.5rem;
+}
+
+.input-field-container {
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* submit container section */
+
+.submit-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-check-label {
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.submit-btn {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    width: 20rem;
+    height: 2.5rem;
+    background-color: #347CA2;
+}

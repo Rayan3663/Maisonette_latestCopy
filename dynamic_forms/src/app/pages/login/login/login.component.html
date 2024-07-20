@@ -1,0 +1,116 @@
+<!-- <div class="cont">
+  <div class="left-container">
+    <img src="assets/images/2.png" alt="Left Image" class="left-image">
+    <div class="WelcomeDiv">
+      <span class="welcome-back">Welcome Back</span>
+      <span class="instruction">Enter your User ID and password to access your account</span>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-field-container">
+        <label class="id"><b>UserId</b></label>
+        <input type="email" class="form-control form-field" formControlName="userId" placeholder="Enter your User ID">
+        <label class="pass"><b>Password</b></label>
+        <div class="password-container">
+          <input type="password" class="form-control form-field" formControlName="password" placeholder="Enter your Password" id="password-field">
+          <i class="fa fa-eye password-toggle" (click)="togglePasswordVisibility()"></i>
+          
+        </div>
+      </div>
+      <div class="submit-container">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" formControlName="rememberMe" id="flexCheckDefault">
+          <span class="form-check-label rem" for="flexCheckDefault">Remember Me</span>
+        </div>
+        <div class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+        <button type="submit" class="btn submit-btn">SIGN IN</button>
+      </div>
+    </form>
+  </div>
+  <div class="right-container">
+    <img src="assets/images/build.png" alt="Right Image" class="right-image">
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+ <div class="cont">
+  <div class="left-container">
+    <img src="assets/images/2.png" alt="Left Image" class="left-image">
+    <div class="WelcomeDiv">
+      <span class="welcome-back">Welcome Back</span>
+      <span class="instruction">Enter your User ID and password to access your account</span>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-field-container">
+        <label class="id"><b>UserId</b></label>
+        <input type="email" class="form-control form-field" [ngClass]="{ 'is-invalid': submitted && f['userId'].errors }" formControlName="userId" placeholder="Enter your User ID">
+        <div *ngIf="submitted && f['userId'].errors" class="invalid-feedback">
+          <div *ngIf="f['userId'].errors['required']">User ID is required</div>
+          <div *ngIf="f['userId'].errors['email']">User ID must be a valid email</div>
+        </div>
+       
+       <label class="pass"  *ngIf="!checkErr"><b>Password</b></label>
+        <div class="password-container" *ngIf="!checkErr">
+          <input type="password" class="form-control pass-form-field " [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"  formControlName="password" placeholder="Enter your Password" id="password-field">
+          <i class="fa fa-eye password-toggle" *ngIf="!checkErr"(click)="togglePasswordVisibility()"></i>
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">Password is required</div>
+            <div *ngIf="f['password'].errors['minlength']">Mininum 6 characters required</div>
+            <div *ngIf="f['password'].errors['maxlength']">Maximum 10 characters</div>
+          </div>
+        </div> 
+        <label class="pass login"  *ngIf="checkErr"><b>Password</b></label>
+        <div class="password-container"  *ngIf="checkErr">
+          <input type="password" class="form-control pass-form-field" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"  formControlName="password" placeholder="Enter your Password" id="password-field">
+          <i class="fa fa-eye password-toggle" *ngIf="!checkErr"(click)="togglePasswordVisibility()"></i>
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">Password is required</div>
+            <div *ngIf="f['password'].errors['minlength']">Mininum 6 characters required</div>
+            <div *ngIf="f['password'].errors['maxlength']">Maximum 10 characters</div>
+          </div>
+        </div> 
+      
+      </div>
+      <div class="submit-container " *ngIf="!checkErr">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" formControlName="rememberMe" id="flexCheckDefault">
+          <span class="form-check-label rem" for="flexCheckDefault">Remember Me</span>
+        </div>
+        <div class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+        <button type="submit" class="btn submit-btn">SIGN IN</button>
+      </div>
+      <div class="submit-container checkRem"*ngIf="checkErr">
+        <div class="form-errCheck">
+          <input class="form-check-input" type="checkbox" formControlName="rememberMe" id="flexCheckDefault">
+          <span class="form-check-label rem" for="flexCheckDefault">Remember Me</span>
+        </div>
+        <div class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</div>
+        <button type="submit" class="btn errSubmit-btn">SIGN IN</button>
+      </div>
+      
+      
+    </form>
+  </div>
+  <div class="right-container">
+    <img src="assets/images/build.png" alt="Right Image" class="right-image">
+  </div>
+</div>
+
+
+
+

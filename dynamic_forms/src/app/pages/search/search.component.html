@@ -1,0 +1,144 @@
+<app-sales-main></app-sales-main>
+<div class="outside">
+  <ul class="nav nav-tabs search">
+    <li class="nav-item">
+      <a class="nav-link" (click)="menu()">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="Results()">Results</a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="showmenu" class="sales-contract">
+  <kendo-tabstrip>
+    <kendo-tabstrip-tab title="Search">
+      <form [formGroup]="searchForm" class="search-form" (ngSubmit)="onSearch()">
+        <p class="gen">General Search Criteria</p>
+        <div class="form-group col-md-12">
+          <div class="doc">
+            <label for="contractNo"><strong>Contract No:</strong></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input kendoTextBox id="contractNo" formControlName="contractNo" />
+          </div>
+          <div class="col-md-2"></div>
+          <div class="doc">
+            <label for="unitNumber"><strong>Unit Number:</strong></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input kendoTextBox id="unitNumber" formControlName="unitNumber" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="customers"><strong>Customers:</strong></label>
+          </div>
+          <input kendoTextBox id="customers" formControlName="customers" />
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="component"><strong>Component:</strong></label>
+          </div>
+          <input kendoTextBox id="component" formControlName="component" />
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="property"><strong>Property:</strong></label>
+          </div>
+          <input kendoTextBox id="property" formControlName="property" />
+        </div>
+        <div class="form-group col-md-12">
+          <div class="doc">
+            <label for="status"><strong>Status:</strong></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input kendoTextBox id="status" formControlName="status" />
+          </div>
+          <div class="col-md-2"></div>
+          <div class="doc">
+            <label for="purpose"><strong>Purpose:</strong></label>
+          </div>
+          <div class="form-group col-md-4">
+            <input kendoTextBox id="purpose" formControlName="purpose" />
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="doc col-md-3">
+            <label for="contractDateStart"><strong>Contract Date from:</strong></label>
+          </div>
+          <div class="col-md-3 dates">
+            <kendo-datepicker formControlName="contractDateStart" placeholder=" "></kendo-datepicker>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="doc">
+            <label for="contractDateTo"><strong>Contract Date To:</strong></label>
+          </div>
+          <div class="col-md-3 dates">
+            <kendo-datepicker formControlName="contractDateTo" placeholder=" "></kendo-datepicker>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="doc">
+            <label for="flowVersion"><strong>Flow Version:</strong></label>
+          </div>
+          <div class="col-md-3">
+            <kendo-dropdownlist class="drop" [defaultItem]="defaultItem" id="flowVersion" formControlName="flowVersion" [data]="bankList"></kendo-dropdownlist>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="doc">
+            <label for="stepAny"><strong>Step Any:</strong></label>
+          </div>
+          <div class="col-md-3">
+            <kendo-dropdownlist class="drop" [defaultItem]="defaultItem" id="stepAny" formControlName="stepAny" [data]="bankList"></kendo-dropdownlist>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="salesAgent"><strong>Sales Agent:</strong></label>
+          </div>
+          <input kendoTextBox id="salesAgent" formControlName="salesAgent" />
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="broker"><strong>Broker:</strong></label>
+          </div>
+          <input kendoTextBox id="broker" formControlName="broker" />
+        </div>
+        <div class="form-group">
+          <div class="doc">
+            <label for="morgageBank"><strong>Mortgage Bank:</strong></label>
+          </div>
+          <kendo-dropdownlist class="drop" [defaultItem]="defaultItem" id="morgageBank" formControlName="morgageBank" [data]="bankList"></kendo-dropdownlist>
+        </div>
+        <button kendoButton type="submit" class="submit">Search</button>
+      </form>
+    </kendo-tabstrip-tab>
+  </kendo-tabstrip>
+</div>
+
+<div *ngIf="showResult">
+  <h2 class="gen"><b>Search Results</b></h2>
+  <kendo-grid [data]="searchResults">
+    <kendo-grid-column field="contractNo" title="Contract No"></kendo-grid-column>
+    <kendo-grid-column field="issueDate" title="Issue Date"></kendo-grid-column>
+    <kendo-grid-column field="customers" title="Customer"></kendo-grid-column>
+    <kendo-grid-column field="property" title="Property"></kendo-grid-column>
+    <kendo-grid-column field="component" title="Component"></kendo-grid-column>
+    <kendo-grid-column field="unitNumber" title="Unit Number"></kendo-grid-column>
+    <kendo-grid-column field="unitMark" title="Unit Mark"></kendo-grid-column>
+    <kendo-grid-column field="amount" title="Amount"></kendo-grid-column>
+    <kendo-grid-column field="status" title="Status"></kendo-grid-column>
+    <kendo-grid-column field="purpose" title="Purpose"></kendo-grid-column>
+    <kendo-grid-column field="salesAgent" title="Sales Agent"></kendo-grid-column>
+    <kendo-grid-column field="broker" title="Broker"></kendo-grid-column>
+    <kendo-grid-column field="stepAny" title="Step Name"></kendo-grid-column>
+    <kendo-grid-column field="morgageBank" title="Mortgage Bank"></kendo-grid-column>
+ 
+    <kendo-grid-column title="Actions" [width]="120">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <button kendoButton (click)="onSearchButtonClick(dataItem) ">View</button>
+        <button kendoButton (click)="onEdit(dataItem)">Edit</button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</div>

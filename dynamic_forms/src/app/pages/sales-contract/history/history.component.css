@@ -1,0 +1,119 @@
+.form-container {
+    min-height: 100vh;
+    width: 75vw;
+    background-color: #f4f2ec;
+}
+
+
+/* history tab css */
+
+.titleCont{
+    display: flex;
+    justify-content: center;
+}
+
+.mainTitle{
+    font-size: 18px;
+    font-weight: 700;
+    color: #476c9e
+}
+
+.history_status{
+    /* width: 5rem; */
+    padding: 1rem;
+    height: 3.5rem;
+    border: 2px solid #60879c;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #bbe6fd;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.HistoryIcon{
+    width: 8rem;
+    height: 1.5rem;
+}
+
+.historyFlow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.iconInfo{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.upperTxt{
+    margin-left: 1rem;
+}
+
+.upperSection{
+    display: flex;
+    justify-content: center;
+}
+
+.section1-fieldset{
+    margin-top: 2rem;
+    height: 14rem;
+}
+
+/*  legend and fieldset*/
+
+.legend-text{
+    font-style: 10px;
+    font-weight: 700;
+    color: #476c9e;
+}
+
+
+/* section 2 */
+
+.section2-fieldset {
+    margin-top: 1rem;
+    /* height: 14rem; */
+}
+
+
+/* Collapsable grid */
+
+.GridColumn{
+ font-weight: bold;
+}
+
+/* custom colapsable css */
+
+.Grid_Expand_btn {
+    border: none;
+    background: linear-gradient(#ffffff, #7f868f);
+    height: 1.8rem;
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 1rem 0 0.5rem;
+}
+
+.Grid_Expand_Cont {
+    /* background-color: #98a8ba; */
+    background: linear-gradient(#98a8ba, #4c5c72);
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+}
+
+.Grid_Expand_Text {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}

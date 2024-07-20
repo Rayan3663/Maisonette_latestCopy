@@ -1,0 +1,96 @@
+<app-sales-main></app-sales-main>
+<form>
+    
+    <div class="form-container">
+        <div class="titleCont">
+            <span class="mainTitle">
+                State and Change History
+            </span>
+        </div>
+    
+        <fieldset class="border rounded-3 p-3 ms-2 me-2 section1-fieldset">
+        <legend class="float-none w-auto px-3 fs-6 legend-text">Status History</legend>
+        <section class="upperSection">
+               <!-- status history -->
+    
+               <div class="historyFlow">
+                    <div class="iconInfo">
+                        <span class="upperTxt">Sample text</span>
+                        <img class="HistoryIcon" src="assets/images/arrow_icon.png" alt="history_icon">
+                        <span class="upperTxt">Sample text</span>
+                    </div>
+                    <div class="history_status"><span class="innerTxt">Draft</span></div>
+    
+                                <div class="iconInfo">
+                                    <span class="upperTxt">Sample text</span>
+                                    <img class="HistoryIcon" src="assets/images/arrow_icon.png" alt="history_icon">
+                                    <span class="upperTxt">Sample text</span>
+                                </div>
+                    <div class="history_status"><span class="innerTxt">Pending Approval</span></div>
+    
+                                    <div class="iconInfo">
+                                        <span class="upperTxt">Sample text</span>
+                                        <img class="HistoryIcon" src="assets/images/arrow_icon.png" alt="history_icon">
+                                        <span class="upperTxt">Sample text</span>
+                                    </div>
+                    <div class="history_status"><span class="innerTxt">Active</span></div>
+               </div>
+        </section>
+    </fieldset>
+        
+        <fieldset class="border rounded-3 p-3 ms-2 me-2 section2-fieldset">
+            <legend class="float-none w-auto px-3 fs-6 legend-text">Change History</legend>
+            <section class="lowerSection">
+                <div class="Grid_Expand_Cont">
+                    <button class="btn Grid_Expand_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                        aria-expanded="false" aria-controls="collapseExample2">
+                        +
+                    </button>
+                    <span class="Grid_Expand_Text">
+                        Date and Time, User 1
+                    </span>
+                </div>
+                <div class="collapse" id="collapseExample1">
+                    <div class="containerGrid">
+                        <kendo-grid [kendoGridBinding]="ChangeHistoryGrid1" >
+                            <kendo-grid-column field="Field" title="Field" [width]="40" [headerClass]="'GridColumn'" [headerStyle]="{'font-weight': 'bold'}">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="OldValue" title="Old Value" [width]="40" [headerClass]="'GridColumn'" [headerStyle]="{'font-weight': 'bold'}">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="NewValue" title="New Value" [width]="40" [headerClass]="'GridColumn'" >
+                            </kendo-grid-column>
+                        </kendo-grid>
+                    </div>
+                </div>
+                
+                <!-- Second Collapsable Grid -->
+                
+                <div class="Grid_Expand_Cont">
+                    <button class="btn Grid_Expand_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+                        aria-expanded="false" aria-controls="collapseExample2">
+                        +
+                    </button>
+                    <span class="Grid_Expand_Text">
+                        Date and Time, User 1
+                    </span>
+                </div>
+                <div class="collapse" id="collapseExample2">
+                    <div class="containerGrid">
+                        <kendo-grid [kendoGridBinding]="ChangeHistoryGrid2">
+                            <kendo-grid-column field="Field" title="Field" [width]="40">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="NewValue" title="New Value" [width]="40">
+                            </kendo-grid-column>
+                        </kendo-grid>
+                    </div>
+                </div>
+    
+            </section>
+        </fieldset>
+        
+    </div>
+    </form>
+    
+    
+    
+   

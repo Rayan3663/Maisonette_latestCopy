@@ -1,0 +1,28 @@
+{
+  "gridData": [
+    {
+      "id": "1",
+      "amount": "60",
+      "description": "Installment",
+      "type": "Reservation",
+      "interestRate": "6",
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "amount": 200,
+      "description": "Installment",
+      "type": "Normal",
+      "interestRate": 7,
+      "status": "Active"
+    },
+    {
+      "id": "3",
+      "amount": 700,
+      "description": "Installment",
+      "type": "Reservation",
+      "interestRate": 8,
+      "status": "Pending"
+    }
+  ]
+}
