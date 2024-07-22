@@ -15,17 +15,21 @@ export class SalesMainComponent {
   displayContractComponent=false;
   displayInstallmentComponent=false;
   displayHistory=false;
-  public defaultItem:string="[Select Action]";
-  public bankList:Array<string>=['Approve Record','Delete Record'];
+  defaultSelection = '--Select--'
+  option: string;
+  options: string[] = ['Add Record','Delete Record'];
+
   constructor(private fb: FormBuilder,private router:Router, private service : SalesTabServiceService) {}
 
- 
+   setDefaultDropDown(){
+    this.option = this.defaultSelection
+  }
 
   ngOnInit()
   {
    
     this.actionForm = this.fb.group({
-      actionDropdown:[this.defaultItem]
+      actionDropdown:[this.option]
   });
 }
 //   showSearchComponent() {
@@ -85,6 +89,7 @@ showHistory() {
   GetDropDownSelectedValue(event : any){
       if(event == 'Delete Record'){
           this.service.DeleteSelectedRows();
+          this.setDefaultDropDown()
       }
   } 
  

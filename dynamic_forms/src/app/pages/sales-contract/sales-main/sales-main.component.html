@@ -4,7 +4,7 @@
   </div>
   <div class="action" [formGroup]="actionForm" >
     <label class="action-1">Actions:</label>
-    <kendo-dropdownlist class="drop"  id="actionDropdown" (valueChange)="GetDropDownSelectedValue($event)" [defaultItem]="defaultItem"  formControlName="actionDropdown" [data]="bankList"></kendo-dropdownlist>
+    <kendo-dropdownlist class="drop"  id="actionDropdown" (valueChange)="GetDropDownSelectedValue($event)" [value]="option"  formControlName="actionDropdown" [data]="options" [defaultItem]="defaultSelection"></kendo-dropdownlist>
   <ul class="nav nav-tabs">
   <li class="nav-item">
       <a class="nav-link" (click)="showSearchComponent()">Search</a>
