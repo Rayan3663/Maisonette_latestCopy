@@ -78,6 +78,7 @@ public size: ButtonSize = "none";
     InterestRateDropDown = [10, 12, 15, 18]
     PlanDropDown = ["Plan 1", "Plan 2", "Plan 3", "Plan 4"]
     MoreOptionDropDown = ["Option 1", "Option 2", "Option 3"]
+
     getDropDownValue(event : any){
          this.DropDownVal = event.target.value;
         //  debugger;
@@ -86,7 +87,7 @@ public size: ButtonSize = "none";
  
     changeFields(){
       // debugger;
-      if (this.DropDownVal === 'Finance1') {
+    if (this.DropDownVal === 'Finance1') {
         console.log("1st");
       this.DynamicForm.addControl('dynamicField1', new FormControl(''));
     } else if (this.DropDownVal === 'Finance2') {

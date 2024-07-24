@@ -49,6 +49,7 @@ export class SearchComponent {
   onView(dataItem: any): void {
    
     if (dataItem && dataItem.contractNo) {
+      this.onSearchButtonClick(dataItem)
       this.router.navigate(['tabs/contract', dataItem.contractNo], { queryParams: { mode: 'view' } });
     } else {
       console.error('Invalid dataItem.contractNo:', dataItem);
@@ -58,6 +59,7 @@ export class SearchComponent {
   onEdit(dataItem: any): void {
     console.log('onEdit dataItem:', dataItem); // Debugging line
     if (dataItem && dataItem.contractNo) {
+      this.onSearchButtonClick(dataItem)
       this.router.navigate(['tabs/contract', dataItem.contractNo], { queryParams: { mode: 'edit' } });
     } else {
       console.error('Invalid dataItem.contractNo:', dataItem);
@@ -75,7 +77,6 @@ export class SearchComponent {
   }
   onSearchButtonClick(dataItem: any): void {
     this.ViewByUnitNumber(dataItem.unitNumber);
-    this.onView(dataItem);
   }
   
   onSearch(): void {

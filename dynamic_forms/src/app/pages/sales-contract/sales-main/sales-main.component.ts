@@ -15,23 +15,33 @@ export class SalesMainComponent {
   displayContractComponent=false;
   displayInstallmentComponent=false;
   displayHistory=false;
-  defaultSelection = '--Select--'
-  option: string;
   options: string[] = ['Add Record','Delete Record'];
 
   constructor(private fb: FormBuilder,private router:Router, private service : SalesTabServiceService) {}
 
-   setDefaultDropDown(){
-    this.option = this.defaultSelection
-  }
 
   ngOnInit()
   {
    
     this.actionForm = this.fb.group({
-      actionDropdown:[this.option]
+      // actionDropdown:[this.option]
+      dropdown: ['--Select--']
   });
+
+      this.actionForm.get('dropdown')?.valueChanges.subscribe(value => {
+      if (value) {
+        this.resetDropdown();
+      }
+    });
 }
+
+
+  resetDropdown() {
+    setTimeout(() => {
+      this.actionForm.get('dropdown')?.reset('--Select--');
+    }, 0);
+  }
+
 //   showSearchComponent() {
 //     this.displaySearchComponent = true;
 //     this.displayContractComponent=false;
@@ -89,7 +99,6 @@ showHistory() {
   GetDropDownSelectedValue(event : any){
       if(event == 'Delete Record'){
           this.service.DeleteSelectedRows();
-          this.setDefaultDropDown()
       }
   } 
  
